@@ -25,7 +25,10 @@ async def welcome_message(message: types.Message):
 async def send_weather(message: types.Message):
     request_city: str = message.text[8:]
     weather_dict: dict = get_weather(API_KEY, request_city, LANG)
-    await message.answer(print_weather(weather_dict))
+    if type(weather_dict) == str:
+        await message.answer(weather_dict)
+    else:
+        await message.answer(print_weather(weather_dict))
 
 
 if __name__ == "__main__":
