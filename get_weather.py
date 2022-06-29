@@ -6,5 +6,5 @@ def get_weather(API_KEY: str, request_city: str, LANG: str) -> dict:
 
     response: dict = dict(requests.get(url).json())
 
-    return "Произошла ошибка.\nПроверьте корректность ввода города и кода страны." if response["cod"] == "404" \
+    return "Произошла ошибка.\nПроверьте корректность ввода города и кода страны." if response["cod"] != "200" \
         else response
