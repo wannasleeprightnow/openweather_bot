@@ -1,18 +1,37 @@
-# Telegram_weather_bot
-Бот, отправляющий информацию о погоде в настоящее время.
-## Принцип работы
-Бот делает запрос в openweathermap API, парсит полученную информацию и отправляет пользователю.
-## Используемые технологии
- - Взаимодействие с Telegram реализовано при помощи модуля aiogram; 
- - Получение запросов при помощи модуля requests;
+# Openweather-telegram-bot
+Бот, отправляющий информацию о погоде в настоящее время.\
+/weather City, Country Code. Например: "/weather Moscow, RU".
+
 ## Запуск
-Создать бота и получить токен у @BotFather; поместить его в переменную TOKEN в файле TOKENS.
+
+
+Клонирование репозитория:
+
+```bash
+git clone https://github.com/enoughtless/openweather_bot.git openweather_bot
+cd openweather_bot
 ```
-mkdir openweather_telegram_bot
-cd openweather_telegram_bot
-git clone https://github.com/enoughtless/openweather_telegram_bot .
-python -m venv venv
+
+Создание и активация виртуального окружения:
+
+```bash
+python3 -m venv venv
+# Для linux
 source venv/bin/activate
-pip install -r requirements.txt
-python main.py
+# Для windows
+source venv\Scripts\activate.bat
+```
+
+BOT_TOKEN нужно получить у @BotFather, а API_TOKEN на сайте openweathermap.
+
+```bash
+echo "BOT_TOKEN = ""
+API_TOKEN = """ > .env
+```
+
+Обновление pip, установка зависимостей и запуск:
+```bash
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
+python3 bot/__main__.py
 ```
